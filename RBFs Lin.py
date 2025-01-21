@@ -7,7 +7,7 @@ from binascii import hexlify
 from hashlib import sha256 as _sha256
 
 alphabet = '123456789ABCDEFGHJKLMNPQRSTUVWXYZabcdefghijkmnopqrstuvwxyz'
-ice = ctypes.CDLL(r"/home/ubuntu/Desktop/aaa/python/ice_secp256k1.so")
+ice = ctypes.CDLL(r"/home/ubuntu/rbf/ice_secp256k1.so")
 ice.init_secp256_lib()
 res_main = (b'\x00') * 20
 ice.privatekey_to_h160.argtypes = [ctypes.c_int, ctypes.c_bool, ctypes.c_char_p, ctypes.c_char_p]
@@ -49,7 +49,7 @@ def main():
             wif = b58encode_check(b'\x80' + private + b'\x01')
             found_info = f'Found: p2pkh:{wif} - {private.hex()} - {datetime.now().strftime("%d/%m/%Y %H:%M:%S")}'
             print(found_info)
-            with open((r"/home/ubuntu/Desktop/aaa/python/found.txt"), 'a') as result:
+            with open((r"/home/ubuntu/rbf/found.txt"), 'a') as result:
                 result.write(found_info + '\n')
                 print("O jogo terminou :)")
                 exit()
