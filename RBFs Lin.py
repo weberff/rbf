@@ -53,12 +53,12 @@ def main():
                 result.write(found_info + '\n')
                 print("O jogo terminou :)")
                 exit()
-        if count >= 100000:
+        if count >= 10000000:
             elapsed_time = time.time() - start_time
             print(f'Chaves por segundo: {count/elapsed_time:,.2f} - {private.hex()[47:]} - {res_main.hex()} - {datetime.now().strftime("%d/%m/%Y %H:%M:%S")}')
             count = 0
             start_time = time.time()
-        if keys >= 130000:
+        if keys >= 10000000:
             keys = 0
             seed = int.from_bytes(seed, 'big')
             seed += 1
