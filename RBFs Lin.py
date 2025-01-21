@@ -58,7 +58,7 @@ def main():
             print(f'Chaves por segundo: {count/elapsed_time:,.2f} - {private.hex()[47:]} - {res_main.hex()} - {datetime.now().strftime("%d/%m/%Y %H:%M:%S")}')
             count = 0
             start_time = time.time()
-        if keys >= 10000000:
+        if keys >= 25000000:
             keys = 0
             seed = int.from_bytes(seed, 'big')
             seed += 1
