@@ -53,7 +53,7 @@ def main():
                 result.write(found_info + '\n')
                 print("O jogo terminou :)")
                 exit()
-        if count >= 1000000000:
+        if count >= 1000000:
             elapsed_time = time.time() - start_time
             print(f'Chaves por segundo: {count/elapsed_time:,.2f} - {private.hex()[47:]} - {res_main.hex()} - {datetime.now().strftime("%d/%m/%Y %H:%M:%S")}')
             count = 0
